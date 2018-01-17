@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Console-customer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div id="header"></div>
+<!--breadcrumb-->
+<div class="">
+  <ul class="breadcrumb">
+    <div class="container">
+      <li><a href="#">Home</a></li>
+      <li>Sign In</li>
+    </div>
+  </ul>
+</div>
+<!--end breadcrumb-->
+<div class="container bootstrap snippet">
+  <div class="row">
+    <div class="col-sm-4"><!--left col-->
+      <div id="balance-panel" class="panel panel-info">
+        <div class="panel-heading">
+          <div class="panel-title" align="center">Balance</div>
+        </div>
+        <div class="panel-body">
+            <div id="balanceamount" class="form-group">
+              <label class="control-label" style="font-size: 20px;">Amount:&nbsp;&nbsp;100,000 USD</label>
+            </div>
+            <div>
+              <button id="wighdraw" type="button" class="btn btn-primary"><i class="icon-facebook"></i>Withdraw</button>
+              <button id="deposit" type="button" class="btn btn-primary"><i class="icon-facebook"></i>Deposit</button>
+            </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="ninety" align="center">
+        <div class="margin-20">
+          <button id="buy-fund" type="button" class="btn btn-success" onclick="location.href='buy-fund.html';"><i class="icon-facebook"></i>Buy Funds</button>
+        </div>
+        <div>
+          <button id="sell-fund" type="button" class="btn btn-primary" onclick="location.href='sell-fund.html';"><i class="icon-facebook"></i>Sell Funds</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <ul class="nav nav-tabs top-20" id="myTab">
+        <li class="active"><a href="#messages" data-toggle="tab">Other Info</a></li>
+        <li><a href="#home" data-toggle="tab">Fund Owned</a></li>
+        <li><a href="#profile" data-toggle="tab">Profile</a></li>
+        <li><a href="#changepw" data-toggle="tab">Reset Password</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="messages">
+        <h2></h2>
+          <img id="line-graph" src="https://www.ielts-exam.net/images/graphs/G126.png">
+        </div>
+        <div class="tab-pane" id="home">
+          <h2></h2>
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+              <tr>
+                <th>Fund ID</th>
+                <th>Fund Name</th>
+                <th>Last Trading Date</th>
+                <th>Shares</th>
+                <th>Position</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>a</td>
+                <td>b</td>
+                <td>c</td>
+                <td>d</td>
+                <td>e</td>
+              </tr>
+              <tr>
+                <td>a</td>
+                <td>b</td>
+                <td>c</td>
+                <td>d</td>
+                <td>e</td>
+              </tr>
+              </tbody>
+            </table>
+            <hr>
+          </div><!--/table-resp-->
+        </div><!--/tab-pane-->
+        <div class="tab-pane col-md-8 col-md-offset-2" id="profile">
+          <h2></h2>
+          <div class="panel panel-info right-30">
+            <div class="panel-heading">
+              <div class="panel-title" align="center">Profile</div>
+            </div>
+            <ul id="profile-list" class="list-group">
+              <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> Ba Ba</li>
+              <li class="list-group-item text-right"><span class="pull-left"><strong>FirstName</strong></span> Ba</li>
+              <li class="list-group-item text-right"><span class="pull-left"><strong>LastName</strong></span> Ba</li>
+              <li class="list-group-item text-right"><span class="pull-left"><strong>Address (line1)</strong></span> 0000 Fifth Ave</li>
+              <li class="list-group-item text-right"><span class="pull-left"><strong>Address (line2)</strong></span> Apt 0</li>
+              <li class="list-group-item text-right"><span class="pull-left"><strong>City</strong></span> Pittsburgh</li>
+              <li class="list-group-item text-right"><span class="pull-left"><strong>State</strong></span> PA</li>
+              <li class="list-group-item text-right"><span class="pull-left"><strong>Zip Code</strong></span> 15213</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tab-pane" id="changepw">
+          <h2></h2>
+          <div class="container" align="center">
+            <div id="signupbox" class="mainbox col-md-6 col-md-offset-1">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <div class="panel-title">Reset Customer Password</div>
+                </div>
+                <div class="panel-body ninety">
+                  <form id="signupform" class="form-horizontal" role="form">
+                    <div id="signupalert" class="alert alert-danger hidden">
+                      <p>Error:</p>
+                      <span></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="oldpassword" class="col-md-4 control-label" style="text-align: left;">Old Password</label>
+                      <div class="col-md-8">
+                        <input type="password" class="form-control" name="oldpasswd" placeholder="Old Password">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="newpassword" class="col-md-4 control-label" style="text-align: left;">New Password</label>
+                      <div class="col-md-8">
+                        <input type="password" class="form-control" name="newpasswd" placeholder="New Password">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="confirmpassword" class="col-md-4 control-label" style="text-align: left;">Confirm Password</label>
+                      <div class="col-md-8">
+                        <input type="password" class="form-control" name="confirmpasswd" placeholder="Confirm Password">
+                      </div>
+                    </div>
+                  </form>
+                  <br>
+                  <button id="submit-password" type="button" class="btn btn-primary"><i class="icon-facebook"></i>Submit</button>
+                  <button id="cancel-change" type="button" class="btn btn-primary"><i class="icon-facebook"></i>Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!--/tab-content-->
+      </div>
+    </div>
+  </div>
+</div>
+<div id="footer"></div>
+<script>
+    $(function(){
+        $("#header").load("../base/header.html");
+        $("#footer").load("../base/footer.html");
+    });
+</script>
+</body>
+</html>

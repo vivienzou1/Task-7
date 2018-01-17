@@ -1,0 +1,390 @@
+.navbar {
+    background-color: #3e4551;
+}
+.navbar-fixed-top .navbar-inner {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.navbar-nav li:hover {
+    background-color: #313741;
+}
+
+/* Style the list */
+ul.breadcrumb {
+    margin-top: 51px;
+    padding: 20px 16px;
+    list-style: none;
+    background-color: #f2f2f2;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+    color: #595959;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: #595959;
+    content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+    color: #808080;
+    text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+    color: #595959;
+    text-decoration: underline;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #3e4551;
+    color: white;
+    text-align: center;
+}
+
+.footer1 {
+    height: 80px;
+    color: #fff;
+    padding-top: 20px;
+    padding-bottom: 100px;
+}
+
+.footer2 {
+    padding-top: 15px;
+    background-color: #313741;
+    height:50px;
+    color: #fff;
+}
+
+#loginbox {
+    margin-top:40px;
+}
+
+#signupbox {
+    margin-top:40px;
+}
+
+.panel-body {
+    padding-top:30px;
+}
+
+#login-alert {
+    display:none;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-top:10px;
+}
+
+.button-group {
+    margin: 10px 0px;
+}
+
+#btn-login-customer {
+    width: 60%;
+}
+
+#btn-login-employee {
+    width: 60%;
+}
+
+#forgot-password {
+    border-top: 1px solid#888;
+    padding-top:15px;
+    font-size:85%;
+}
+
+.nav-side-menu {
+    overflow: auto;
+    font-family: verdana;
+    font-size: 12px;
+    font-weight: 200;
+    background-color: #3e4551;
+    position: fixed;
+    top: 0px;
+    width: 300px;
+    height: 100%;
+    color: #e1ffff;
+    left: 0;
+    text-align: left;
+    z-index: 100;
+}
+.nav-side-menu .brand {
+    background-color: #313741;
+    line-height: 50px;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+}
+.nav-side-menu .toggle-btn {
+    display: none;
+}
+.nav-side-menu ul,
+.nav-side-menu li {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    line-height: 35px;
+    cursor: pointer;
+    /*
+      .collapsed{
+         .arrow:before{
+                   font-family: FontAwesome;
+                   content: "\f053";
+                   display: inline-block;
+                   padding-left:10px;
+                   padding-right: 10px;
+                   vertical-align: middle;
+                   float:right;
+              }
+       }
+  */
+}
+.nav-side-menu ul :not(collapsed) .arrow:before,
+.nav-side-menu li :not(collapsed) .arrow:before {
+    font-family: FontAwesome;
+    content: "\f078";
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: middle;
+    float: right;
+}
+.nav-side-menu ul .active,
+.nav-side-menu li .active {
+    border-left: 3px solid #d19b3d;
+    background-color: #4f5b69;
+}
+.nav-side-menu ul .sub-menu li.active,
+.nav-side-menu li .sub-menu li.active {
+    color: #d19b3d;
+}
+.nav-side-menu ul .sub-menu li.active a,
+.nav-side-menu li .sub-menu li.active a {
+    color: #d19b3d;
+}
+.nav-side-menu ul .sub-menu li,
+.nav-side-menu li .sub-menu li {
+    background-color: #313741;
+    border: none;
+    line-height: 28px;
+    border-bottom: 1px solid #313741;
+    margin-left: 0px;
+    padding-left: 30px;
+}
+.nav-side-menu ul .sub-menu li:hover,
+.nav-side-menu li .sub-menu li:hover {
+    background-color: #020203;
+}
+.nav-side-menu ul .sub-menu li:before,
+.nav-side-menu li .sub-menu li:before {
+    font-family: FontAwesome;
+    content: "\f105";
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+.nav-side-menu li {
+    padding-left: 0px;
+    border-left: 3px solid #313741;
+    border-bottom: 1px solid #313741;
+}
+.nav-side-menu li a {
+    text-decoration: none;
+    color: #e1ffff;
+}
+.nav-side-menu li a i {
+    padding-left: 10px;
+    width: 20px;
+    padding-right: 20px;
+}
+.nav-side-menu li:hover {
+    border-left: 3px solid #d19b3d;
+    background-color: #4f5b69;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+@media (max-width: 767px) {
+    .nav-side-menu {
+        position: relative;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .nav-side-menu .toggle-btn {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 10 !important;
+        padding: 3px;
+        background-color: #ffffff;
+        color: #000;
+        width: 40px;
+        text-align: center;
+    }
+    .brand {
+        text-align: left !important;
+        font-size: 22px;
+        padding-left: 20px;
+        line-height: 50px !important;
+    }
+}
+@media (min-width: 767px) {
+    .nav-side-menu .menu-list .menu-content {
+        display: block;
+    }
+}
+
+.navbar-item {
+    padding-left: 10px;
+}
+
+#console-header {
+    background-color: #3e4551;
+    z-index:10;
+}
+
+#balance-panel {
+    margin-right: 30px;
+    margin-top: 40px;
+    margin-bottom: 0px;
+}
+
+#balance-panel .panel-body {
+    width: 90%;
+    padding-bottom: 40px;
+    padding-top: 20px;
+}
+
+#balanceamount {
+    text-align: center;
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+
+#wighdraw {
+    float:right;
+    width:100px;
+}
+
+#deposit {
+    float:right;
+    margin-right: 12%;
+    width:100px;
+    background-color: #999999;
+    border-color: #999999;
+}
+
+.ninety {
+    width: 90%;
+}
+
+.margin-20 {
+    margin-bottom: 20px;
+}
+
+#buy-fund {
+    width:200px;
+}
+
+#sell-fund {
+    width:200px;
+}
+
+.top-20 {
+    margin-top: 20px;
+}
+
+#line-graph {
+    height: 300px;
+    padding-left: 100px;
+    padding-top: 30px;
+}
+
+.right-30 {
+    margin-right: 30px;
+}
+
+#profile-list {
+    padding: 0 10px;
+}
+
+.hidden {
+    display:none;
+}
+
+#submit-password {
+    float:right;
+    margin-right: 5%;
+    width:100px;
+}
+
+#cancel-change {
+    float:right;
+    margin-right: 5%;
+    width:100px;
+    background-color: #999999;
+    border-color: #999999;
+}
+
+.margin-30 {
+    margin-right: 30px;
+    padding-bottom: 30px;
+}
+
+#place-order {
+    float:right;
+    width:100px;
+}
+
+#cancel-buy {
+    float:right;
+    margin-right: 12%;
+    width:100px;
+    background-color: #999999;
+    border-color: #999999;
+}
+
+
+#sell {
+    float:right;
+    width:100px;
+}
+
+#cancel-sell {
+    float:right;
+    margin-right: 12%;
+    width:100px;
+    background-color: #999999;
+    border-color: #999999;
+}
+
+.search-bar {
+    margin-top: 20px;
+    width: 300px;
+}

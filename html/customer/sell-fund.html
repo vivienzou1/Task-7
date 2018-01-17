@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sell Detail</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="css/bootstrap-table.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/bootstrap-table.js"></script>
+</head>
+<body>
+<div id="header"></div>
+<!--breadcrumb-->
+<div class="">
+  <ul class="breadcrumb">
+    <div class="container">
+      <li><a href="#">Home</a></li>
+      <li>Sign In</li>
+    </div>
+  </ul>
+</div>
+<!--end breadcrumb-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div id="signupbox" class="mainbox">
+        <div class="panel panel-info margin-30">
+          <div class="panel-heading">
+            <div class="panel-title">Buy Fund</div>
+          </div>
+          <div class="panel-body ninety">
+            <form id="signupform" class="form-horizontal" role="form">
+              <div id="signupalert" class="alert alert-danger hidden">
+                <p>Error:</p>
+                <span></span>
+              </div>
+              <div class="form-group">
+                <label for="fundsymbol" class="col-md-9 col-md-offset-2 control-label" style="text-align: left;">Fund Symbol</label>
+                <br>
+                <br>
+                <div class="col-md-9 col-md-offset-2">
+                  <input type="text" class="form-control" name="fundsymbol" placeholder="Fund Symbol">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="sharenum" class="col-md-9 col-md-offset-2 control-label" style="text-align: left;">Shares you own</label>
+                <br>
+                <br>
+                <div class="col-md-9 col-md-offset-2">
+                  <input type="text" class="form-control" name="sharenum" placeholder="Shares you own">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="sharesell" class="col-md-9 col-md-offset-2 control-label" style="text-align: left;">Shares to sell</label>
+                <br>
+                <br>
+                <div class="col-md-9 col-md-offset-2">
+                  <input type="text" class="form-control" name="sharesell" placeholder="Shares to sell">
+                </div>
+              </div>
+            </form>
+            <br>
+            <button id="sell" type="button" class="btn btn-primary"><i class="icon-facebook"></i>Sell</button>
+            <button id="cancel-sell" type="button" class="btn btn-primary"><i class="icon-facebook"></i>Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="" align="center">
+        <!--<h1>Customer List</h1>-->
+        <div class="row">
+          <div class="col-md-6 col-md-offset-6">
+            <div class="search-bar">
+              <div class="input-group">
+                <input type="text" class="form-control input" placeholder="Search by ID" />
+                <span class="input-group-btn">
+            <button class="btn btn-info btn" type="button">
+              <i class="glyphicon glyphicon-search"></i>
+            </button>
+          </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="tab-content">
+            <div class="tab-pane active" id="home">
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                  <tr>
+                    <th>Fund ID</th>
+                    <th>Fund Name</th>
+                    <th>Last Trading Date</th>
+                    <th>Shares</th>
+                    <th>Position</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>a</td>
+                    <td>b</td>
+                    <td>c</td>
+                    <td>d</td>
+                    <td>e</td>
+                  </tr>
+                  <tr>
+                    <td>a</td>
+                    <td>b</td>
+                    <td>c</td>
+                    <td>d</td>
+                    <td>e</td>
+                  </tr>
+                  <tr>
+                    <td>a</td>
+                    <td>b</td>
+                    <td>c</td>
+                    <td>d</td>
+                    <td>e</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <hr>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="footer"></div>
+<script>
+    $(function(){
+        $("#header").load("../base/header.html");
+        $("#footer").load("../base/footer.html");
+    });
+</script>
+</body>
+</html>

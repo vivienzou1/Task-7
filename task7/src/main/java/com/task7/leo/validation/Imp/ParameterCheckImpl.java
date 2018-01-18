@@ -15,6 +15,7 @@ public class ParameterCheckImpl implements ConstraintValidator<ParameterCheck, O
     @Override
     public boolean isValid(Object o, ConstraintValidatorContext constraintValidatorContext) {
         UserRegisterForm userRegisterForm  = (UserRegisterForm) o;
+
         if (userRegisterForm.getPassword().equals(userRegisterForm.getConfirmPassword())) {
             return true;
         }

@@ -4,8 +4,10 @@ import com.task7.leo.validation.Imp.DuplicatedCheckImpl;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
-import java.lang.annotation.Documented;
+import java.lang.annotation.*;
 
+@Target({ElementType.ANNOTATION_TYPE, ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = DuplicatedCheckImpl.class)
 @Documented
 public @interface DuplicatedCheck {

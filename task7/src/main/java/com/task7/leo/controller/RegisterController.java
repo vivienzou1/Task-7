@@ -26,7 +26,6 @@ public class RegisterController {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginView() {
-        System.out.println("5555555");
         return "login";
     }
 
@@ -39,11 +38,9 @@ public class RegisterController {
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String registerForm(Principal principal, Model model) {
-        System.out.println("666666666");
         if (principal == null) {
             UserRegisterForm userRegisterForm = new UserRegisterForm();
             model.addAttribute("userRegisterForm", userRegisterForm);
-            System.out.println("ffffffffff");
             return "register";
         }
 
@@ -53,7 +50,6 @@ public class RegisterController {
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String register(@ModelAttribute(value = "userRegisterForm") @Valid UserRegisterForm userRegisterForm,
                            BindingResult result) {
-        System.out.println("66666666asdfasdfa6");
         if (result.hasErrors()) {
             return "register";
         }

@@ -4,8 +4,6 @@ import com.task7.leo.repositories.RoleRepository;
 import com.task7.leo.dto.UserRegisterForm;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
 

@@ -4,8 +4,11 @@ import com.task7.leo.validation.Imp.ParameterCheckImpl;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
-import java.lang.annotation.Documented;
+import java.lang.annotation.*;
 
+
+@Target({ElementType.ANNOTATION_TYPE, ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = ParameterCheckImpl.class)
 @Documented
 public @interface ParameterCheck {

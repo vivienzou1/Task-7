@@ -55,6 +55,8 @@
         <li><a href="#home" data-toggle="tab">Fund Owned</a></li>
         <li><a href="#profile" data-toggle="tab">Profile</a></li>
         <li><a href="#changepw" data-toggle="tab">Reset Password</a></li>
+        <li><a href="#deposit-check" data-toggle="tab">Deposit Check</a></li>
+        <li><a href="#request-check" data-toggle="tab">Request Check</a></li>
       </ul>
       <div class="tab-content">
         <div class="tab-pane active" id="messages">
@@ -115,10 +117,10 @@
         <div class="tab-pane" id="changepw">
           <h2></h2>
           <div class="container" align="center">
-            <div id="signupbox" class="mainbox col-md-6 col-md-offset-1">
+            <div id="signupbox" class="mainbox col-md-6 col-md-offset">
               <div class="panel panel-info">
                 <div class="panel-heading">
-                  <div class="panel-title">Reset Customer Password</div>
+                  <div class="panel-title">Reset Password</div>
                 </div>
                 <div class="panel-body ninety">
                   <form id="signupform" class="form-horizontal" role="form">
@@ -147,6 +149,82 @@
                   </form>
                   <br>
                   <button id="submit-password" type="button" class="btn btn-primary"><i class="icon-facebook"></i>Submit</button>
+                  <button id="cancel-change" type="button" class="btn btn-primary"><i class="icon-facebook"></i>Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!--/tab-content-->
+        <div class="tab-pane" id="deposit-check">
+          <h2></h2>
+          <div class="container" align="center">
+            <div id="signupbox" class="mainbox col-md-6 col-md-offset-1">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <div class="panel-title">Deposit Check</div>
+                </div>
+                <div class="panel-body ninety">
+                  <form id="signupform" class="form-horizontal" role="form">
+                    <div id="signupalert" class="alert alert-danger hidden">
+                      <p>Error:</p>
+                      <span></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="checkamount" class="col-md-4 control-label" style="text-align: left;">Check Amount</label>
+                      <div class="col-md-8">
+                        <input type="text" class="form-control" name="checkamount" placeholder="Check Amount">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="confirmamount" class="col-md-4 control-label" style="text-align: left;">Confirm Amount</label>
+                      <div class="col-md-8">
+                        <input type="password" class="form-control" name="confirmamount" placeholder="Confirm Amount">
+                      </div>
+                    </div>
+                  </form>
+                  <br>
+                  <button id="submit-password" type="button" class="btn btn-primary"><i class="icon-facebook"></i>Deposit</button>
+                  <button id="cancel-change" type="button" class="btn btn-primary"><i class="icon-facebook"></i>Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!--/tab-content-->
+        <div class="tab-pane" id="request-check">
+          <h2></h2>
+          <div class="container" align="center">
+            <div id="signupbox" class="mainbox col-md-6 col-md-offset-1">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <div class="panel-title">Request Check</div>
+                </div>
+                <div class="panel-body ninety">
+                  <form id="signupform" class="form-horizontal" role="form">
+                    <div id="signupalert" class="alert alert-danger hidden">
+                      <p>Error:</p>
+                      <span></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="cashbalance" class="col-md-4 control-label" style="text-align: left;">Cash Balance</label>
+                      <div class="col-md-8">
+                        <input type="text" class="form-control" name="cashbalence" placeholder="Cash Balance">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="requestamount" class="col-md-4 control-label" style="text-align: left;">Request Amount</label>
+                      <div class="col-md-8">
+                        <input type="text" class="form-control" name="requestmamount" placeholder="Request Amount">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="confirmrequestamount" class="col-md-4 control-label" style="text-align: left;">Confirm Amount</label>
+                      <div class="col-md-8">
+                        <input type="text" class="form-control" name="confirmrequestmamount" placeholder="Confirm Amount">
+                      </div>
+                    </div>
+                  </form>
+                  <br>
+                  <button id="submit-password" type="button" class="btn btn-primary"><i class="icon-facebook"></i>Request</button>
                   <button id="cancel-change" type="button" class="btn btn-primary"><i class="icon-facebook"></i>Cancel</button>
                 </div>
               </div>

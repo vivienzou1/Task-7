@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,6 +25,9 @@ public class Fund {
     private double price;
 
     public static final double PRICE_LIMIT = 100000;
+
+    @Temporal(TemporalType.DATE)
+    private Date lastTransition;
 
     @ManyToMany
     private Set<User> users;

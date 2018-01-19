@@ -1,19 +1,16 @@
 package com.task7.leo.domain;
 
-import com.task7.leo.dto.TransitionForm;
-import com.task7.leo.dto.UserRegisterForm;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Date;
 
 @Data
 @Entity
 @NoArgsConstructor
-@Table(name = "transition")
-public class Transition {
+@Table(name = "transaction")
+public class Transaction {
     @Id
     @GeneratedValue
     private long id;
@@ -24,14 +21,21 @@ public class Transition {
     @ManyToOne()
     private Fund fund;
 
+    private double amount;
+
+    private double share;
+
 //    @Temporal(TemporalType.TIMESTAMP)
     private Timestamp timestamp;
 
+    private String type;
 
-    public Transition(User user, Fund fund) {
+    public Transaction(User user, Fund fund, double amount, double share, String type) {
         this.user = user;
         this.fund = fund;
-        this.timestamp = new Timestamp(System.currentTimeMillis());
+        this.amount = amount;
+        this.share = share;
+        this.type = type;
     }
 
     @Override
@@ -40,6 +44,14 @@ public class Transition {
         result = 31 * result + (int) (id ^ (id >>> 32));
         result = 31 * result + user.hashCode();
         result = 31 * result + fund.hashCode();
+        result = 31 * result + (int) (amount * 100);
+        result = 31 * result + (int) (share * 1000);
+        result = 31 * result + type.hashCode();
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return type + "(" + id + " " + user.getUsername() + " " + fund.getFundSymbol() + " " + amount + " " + share + ")";
     }
 }

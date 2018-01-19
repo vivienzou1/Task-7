@@ -13,11 +13,11 @@
 </head>
 
 <body>
-<c:if test="${not empty transitions}">
+<c:if test="${not empty transactions}">
 
     <ul>
-        <c:forEach var="transition" items="${transitions}">
-            <li>${transition}</li>
+        <c:forEach var="transaction" items="${transactions}">
+            <li>${transaction}</li>
         </c:forEach>
     </ul>
 

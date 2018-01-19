@@ -1,14 +1,14 @@
 package com.task7.leo.dto;
 
 import com.task7.leo.validation.BuyFundCheck;
+import com.task7.leo.validation.WithdrawCheck;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-@BuyFundCheck
-public class BuyForm {
+@WithdrawCheck
+public class WithdrawForm {
 
-    private int fundSymbol;
     private double amount;
 }

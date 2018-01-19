@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @SellFundCheck
-public class SellForm extends TransitionForm {
+public class SellForm {
 
+    private int fundSymbol;
     private double share;
 }

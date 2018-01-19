@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Date;
 
 @Data
 @Entity
@@ -26,7 +27,7 @@ public class Transaction {
     private double share;
 
 //    @Temporal(TemporalType.TIMESTAMP)
-    private Timestamp timestamp;
+    private Date date;
 
     private String type;
 
@@ -52,6 +53,6 @@ public class Transaction {
 
     @Override
     public String toString() {
-        return type + "(" + id + " " + user.getUsername() + " " + fund.getFundSymbol() + " " + amount + " " + share + ")";
+        return type + "(" + id + " " + user.getUsername() + " " + (fund == null ? "null" : fund.getFundSymbol()) + " " + amount + " " + share + ")";
     }
 }

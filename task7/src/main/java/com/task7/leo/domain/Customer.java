@@ -1,5 +1,6 @@
 package com.task7.leo.domain;
 
+import com.task7.leo.dto.UserRegisterForm;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -27,4 +28,13 @@ public class Customer {
 
     private String lastName;
 
+    private String role;
+
+    public Customer(UserRegisterForm userRegisterForm) {
+        this.role = "ROLE_CUSTOMER";
+        this.username = userRegisterForm.getUsername();
+        this.email = userRegisterForm.getEmail();
+        this.firstName = userRegisterForm.getFirstName();
+        this.lastName = userRegisterForm.getLastName();
+    }
 }

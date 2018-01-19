@@ -29,13 +29,6 @@ public class RegisterController {
         return "login";
     }
 
-    @RequestMapping(value = "login_process", method = RequestMethod.POST)
-    public String login() {
-        return "home";
-    }
-
-
-
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String registerForm(Principal principal, Model model) {
         if (principal == null) {

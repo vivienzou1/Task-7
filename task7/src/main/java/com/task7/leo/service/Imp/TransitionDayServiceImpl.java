@@ -1,7 +1,9 @@
 package com.task7.leo.service.Imp;
 
+import com.task7.leo.domain.Fund;
 import com.task7.leo.domain.Transaction;
 import com.task7.leo.domain.User;
+import com.task7.leo.dto.TransitionDayForm;
 import com.task7.leo.dto.WithdrawForm;
 import com.task7.leo.repositories.FundRepository;
 import com.task7.leo.repositories.TransactionRepository;
@@ -67,5 +69,12 @@ public class TransitionDayServiceImpl implements TransitionDayService {
     public void withdraw(Transaction transaction, Date date) {
         System.out.println("withdraw");
         transaction.setDate(date);
+    }
+
+    public TransitionDayForm getForm() {
+        List<Fund> funds = fundRepository.findAll();
+        TransitionDayForm transitionDayForm = new TransitionDayForm();
+        transitionDayForm.setFunds(funds);
+        return transitionDayForm;
     }
 }

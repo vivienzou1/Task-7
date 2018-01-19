@@ -37,21 +37,17 @@ public class TransitionDayController {
     @RequestMapping(value = "/transitionday", method = RequestMethod.GET)
     public String transitiondayForm(Model model) {
 
-        List<Fund> funds = fundRepository.findAll();
-        TransitionDayForm transitionDayForm = new TransitionDayForm();
-        transitionDayForm.setFunds(funds);
+        TransitionDayForm transitionDayForm = transitionDayService.getForm();
         model.addAttribute("transitionDayForm", transitionDayForm);
         return "transitionday";
     }
 
     @RequestMapping(value = "/transitionday", method = RequestMethod.POST)
-    public String transitionday(@ModelAttribute(value = "transitiondayForm") @Valid BuyForm buyForm,
+    public String transitionday(@ModelAttribute(value = "transitionDayForm") @Valid TransitionDayForm transitionDayForm,
                           BindingResult result) {
         if (result.hasErrors()) {
             return "transitionday";
         }
-
-
 
         transitionDayService.transitionDay(new Date());
 

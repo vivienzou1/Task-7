@@ -10,7 +10,6 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
-@BuyFundCheck
 public class TransitionDayForm {
 
     private List<Fund> funds;

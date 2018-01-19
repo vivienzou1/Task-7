@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -76,5 +77,18 @@ public class TransitionDayServiceImpl implements TransitionDayService {
         TransitionDayForm transitionDayForm = new TransitionDayForm();
         transitionDayForm.setFunds(funds);
         return transitionDayForm;
+    }
+
+    public void updatePrice(TransitionDayForm transitionDayForm) {
+        for (Fund fund : transitionDayForm.getFunds()) {
+
+            System.out.println(fund.getPrice());
+            System.out.println(fund.getFundSymbol());
+            Fund oriFund = fundRepository.findByFundSymbol(fund.getFundSymbol());
+            System.out.println(oriFund);
+            oriFund.setPrice(fund.getPrice());
+        }
+
+        System.out.println(transitionDayForm.getDate());
     }
 }

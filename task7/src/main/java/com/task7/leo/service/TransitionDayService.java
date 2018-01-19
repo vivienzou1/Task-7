@@ -9,6 +9,7 @@ import java.util.Date;
 public interface TransitionDayService {
 
     TransitionDayForm getForm();
+    void updatePrice(TransitionDayForm form);
     void transitionDay(Date date);
     void buy(Transaction transaction, Date date);
     void sell(Transaction transaction, Date date);

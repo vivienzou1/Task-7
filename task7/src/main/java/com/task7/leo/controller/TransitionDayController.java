@@ -49,6 +49,7 @@ public class TransitionDayController {
             return "transitionday";
         }
 
+        transitionDayService.updatePrice(transitionDayForm);
         transitionDayService.transitionDay(new Date());
 
         return "success";

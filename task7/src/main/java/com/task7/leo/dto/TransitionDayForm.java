@@ -2,6 +2,7 @@ package com.task7.leo.dto;
 
 import com.task7.leo.domain.Fund;
 import com.task7.leo.validation.BuyFundCheck;
+import com.task7.leo.validation.TransitionDayCheck;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +11,7 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
+@TransitionDayCheck
 public class TransitionDayForm {
 
     private List<Fund> funds;

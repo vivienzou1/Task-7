@@ -18,9 +18,14 @@
     <ul>
         <c:forEach var="i" begin="0" end="1">
             <li>${transitionDayForm.getFunds()[i]}</li>
-            <form:label path="funds[${i}]">Price</form:label>
-            <form:input path="funds[${i}]" required="required" />
-            <form:errors path="funds[${i}]"/>
+
+            <form:label path="funds[${i}].fundSymbol">Symbol</form:label>
+            <form:input readonly="readonly" path="funds[${i}].fundSymbol" required="required" />
+            <form:errors path="funds[${i}].fundSymbol"/>
+
+            <form:label path="funds[${i}].price">Price</form:label>
+            <form:input path="funds[${i}].price" required="required" />
+            <form:errors path="funds[${i}].price"/>
         </c:forEach>
             <br>
 

@@ -2,6 +2,7 @@ package com.task7.leo.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -10,7 +11,7 @@ import java.sql.Timestamp;
 @Entity
 @NoArgsConstructor
 @Table(name = "buy")
-public class Buy extends Transition{
+public class Buy extends Transition {
 
     private double amount;
 

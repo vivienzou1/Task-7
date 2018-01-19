@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Entity
 @NoArgsConstructor
 @Table(name = "sell")
-public class Sell extends Transition{
+public class Sell extends Transition {
 
     private double share;
 

@@ -24,7 +24,7 @@ public class Transition {
     @ManyToOne()
     private Fund fund;
 
-    @Temporal(TemporalType.TIMESTAMP)
+//    @Temporal(TemporalType.TIMESTAMP)
     private Timestamp timestamp;
 
 

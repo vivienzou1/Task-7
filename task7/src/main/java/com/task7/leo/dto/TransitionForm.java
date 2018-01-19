@@ -9,8 +9,6 @@ import org.hibernate.validator.constraints.NotBlank;
 
 @Data
 @NoArgsConstructor
-@DuplicatedCheck
-@ParameterCheck
 public class TransitionForm {
 
     //@NotBlank(message = "confirm password can not be empty")

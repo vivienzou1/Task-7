@@ -1,6 +1,6 @@
 package com.task7.leo.validation;
 
-import com.task7.leo.dto.DepositForm;
+
 import com.task7.leo.validation.Imp.DepositCheckImpl;
 
 import javax.validation.Constraint;

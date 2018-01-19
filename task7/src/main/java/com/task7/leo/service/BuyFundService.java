@@ -1,6 +1,5 @@
 package com.task7.leo.service;
 
-import com.task7.leo.domain.User;
 import com.task7.leo.dto.BuyForm;
 
 public interface BuyFundService {

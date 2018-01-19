@@ -52,6 +52,7 @@ public class Transaction {
 
     @Override
     public String toString() {
-        return type + "(" + id + " " + user.getUsername() + " " + (fund == null ? "null" : fund.getFundSymbol()) + " " + amount + " " + share + ")";
+        return type + "(" + id + " " + user.getUsername() + " " + (fund == null ? "null" : fund.getFundSymbol()) + " " +
+                amount + " " + share + " "  + (date == null ? "null" : date.toString()) +  ")";
     }
 }

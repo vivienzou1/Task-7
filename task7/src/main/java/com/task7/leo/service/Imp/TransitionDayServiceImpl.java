@@ -2,20 +2,15 @@ package com.task7.leo.service.Imp;
 
 import com.task7.leo.domain.Fund;
 import com.task7.leo.domain.Transaction;
-import com.task7.leo.domain.User;
 import com.task7.leo.dto.TransitionDayForm;
-import com.task7.leo.dto.WithdrawForm;
 import com.task7.leo.repositories.FundRepository;
 import com.task7.leo.repositories.TransactionRepository;
-import com.task7.leo.repositories.UserRepository;
 import com.task7.leo.service.TransitionDayService;
-import com.task7.leo.service.WithdrawService;
 import javafx.animation.Transition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -23,53 +18,55 @@ import java.util.List;
 @Transactional
 public class TransitionDayServiceImpl implements TransitionDayService {
 
-    private final UserRepository userRepository;
     private final FundRepository fundRepository;
     private final TransactionRepository transactionRepository;
+    private Date date;
 
     @Autowired
-    public TransitionDayServiceImpl(UserRepository userRepository, FundRepository fundRepository, TransactionRepository transactionRepository) {
-        this.userRepository = userRepository;
+    public TransitionDayServiceImpl(FundRepository fundRepository, TransactionRepository transactionRepository) {
         this.fundRepository = fundRepository;
         this.transactionRepository = transactionRepository;
     }
 
     @Override
-    public void transitionDay(Date date) {
+    public void transitionDay() {
+//        this.date = date;
         // for debug ******************
         long lastId = 0;
         List<Transaction> transactions = transactionRepository.findByIdAfter(lastId);
         for (Transaction transaction : transactions) {
             if (transaction.getType().equals("buy")) {
-                buy(transaction, date);
+                buy(transaction);
             } else if (transaction.getType().equals("sell")) {
-                sell(transaction, date);
+                sell(transaction);
             } else if (transaction.getType().equals("deposit")) {
-                deposit(transaction, date);
+                deposit(transaction);
             } else if (transaction.getType().equals("withdraw")) {
-                withdraw(transaction, date);
+                withdraw(transaction);
             }
         }
     }
 
-    public void buy(Transaction transaction, Date date) {
+    public void buy(Transaction transaction) {
         System.out.println("buy");
-        transaction.setDate(date);
+        System.out.println(date);
+        transactionRepository.updateDateById(date, transaction.getId());
+        System.out.println("success");
     }
 
-    public void sell(Transaction transaction, Date date) {
+    public void sell(Transaction transaction) {
         System.out.println("sell");
-        transaction.setDate(date);
+        transactionRepository.updateDateById(date, transaction.getId());
     }
 
-    public void deposit(Transaction transaction, Date date) {
+    public void deposit(Transaction transaction) {
         System.out.println("deposit");
-        transaction.setDate(date);
+        transactionRepository.updateDateById(date, transaction.getId());
     }
 
-    public void withdraw(Transaction transaction, Date date) {
+    public void withdraw(Transaction transaction) {
         System.out.println("withdraw");
-        transaction.setDate(date);
+        transactionRepository.updateDateById(date, transaction.getId());
     }
 
     public TransitionDayForm getForm() {
@@ -82,13 +79,10 @@ public class TransitionDayServiceImpl implements TransitionDayService {
     public void updatePrice(TransitionDayForm transitionDayForm) {
         for (Fund fund : transitionDayForm.getFunds()) {
 
-            System.out.println(fund.getPrice());
-            System.out.println(fund.getFundSymbol());
             Fund oriFund = fundRepository.findByFundSymbol(fund.getFundSymbol());
-            System.out.println(oriFund);
             oriFund.setPrice(fund.getPrice());
         }
 
-        System.out.println(transitionDayForm.getDate());
+        this.date = transitionDayForm.getDate();
     }
 }

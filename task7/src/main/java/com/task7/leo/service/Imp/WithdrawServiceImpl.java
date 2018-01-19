@@ -1,14 +1,11 @@
 package com.task7.leo.service.Imp;
 
-import com.task7.leo.domain.Fund;
+
 import com.task7.leo.domain.Transaction;
 import com.task7.leo.domain.User;
-import com.task7.leo.dto.BuyForm;
 import com.task7.leo.dto.WithdrawForm;
-import com.task7.leo.repositories.FundRepository;
 import com.task7.leo.repositories.TransactionRepository;
 import com.task7.leo.repositories.UserRepository;
-import com.task7.leo.service.BuyFundService;
 import com.task7.leo.service.WithdrawService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

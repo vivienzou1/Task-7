@@ -10,9 +10,9 @@ public interface TransitionDayService {
 
     TransitionDayForm getForm();
     void updatePrice(TransitionDayForm form);
-    void transitionDay(Date date);
-    void buy(Transaction transaction, Date date);
-    void sell(Transaction transaction, Date date);
-    void deposit(Transaction transaction, Date date);
-    void withdraw(Transaction transaction, Date date);
+    void transitionDay();
+    void buy(Transaction transaction);
+    void sell(Transaction transaction);
+    void deposit(Transaction transaction);
+    void withdraw(Transaction transaction);
 }

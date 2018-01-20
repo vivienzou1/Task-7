@@ -30,7 +30,6 @@ public class TransitionDayServiceImpl implements TransitionDayService {
 
     @Override
     public void transitionDay() {
-//        this.date = date;
         // for debug ******************
         long lastId = 0;
         List<Transaction> transactions = transactionRepository.findByIdAfter(lastId);
@@ -79,8 +78,8 @@ public class TransitionDayServiceImpl implements TransitionDayService {
     public void updatePrice(TransitionDayForm transitionDayForm) {
         for (Fund fund : transitionDayForm.getFunds()) {
 
-            Fund oriFund = fundRepository.findByFundSymbol(fund.getFundSymbol());
-            oriFund.setPrice(fund.getPrice());
+            fundRepository.updatePriceBySymbol(fund.getPrice(), fund.getFundSymbol());
+
         }
 
         this.date = transitionDayForm.getDate();

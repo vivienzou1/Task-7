@@ -3,7 +3,6 @@ package com.task7.leo.controller;
 
 
 import com.task7.leo.dto.TransitionDayForm;
-import com.task7.leo.repositories.FundRepository;
 import com.task7.leo.service.TransitionDayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
-import java.util.Date;
 
 @Controller
 public class TransitionDayController {

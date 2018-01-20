@@ -1,7 +1,9 @@
 package com.task7.leo.service.Imp;
 
-import com.task7.leo.domain.User;
-import com.task7.leo.repositories.UserRepository;
+import com.task7.leo.domain.Customer;
+import com.task7.leo.domain.Employee;
+import com.task7.leo.repositories.CustomerRepository;
+import com.task7.leo.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -18,23 +20,38 @@ import java.util.Set;
 @Transactional
 public class AuthImpl implements UserDetailsService {
 
-    private final UserRepository userRepository;
+    private final CustomerRepository customerRepository;
+
+    private final EmployeeRepository employeeRepository;
 
     @Autowired
-    public AuthImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public AuthImpl(CustomerRepository customerRepository, EmployeeRepository employeeRepository) {
+        //this.userRepository = userRepository;
+        this.customerRepository = customerRepository;
+        this.employeeRepository = employeeRepository;
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username);
+        //User user = userRepository.findByUsername(username);
+        Customer customer = customerRepository.findCustomerByUsername(username);
+        Employee employee = employeeRepository.findEmployeeByUsername(username);
 
-        if (user == null) {
+        if (customer == null && employee == null) {
             throw new UsernameNotFoundException("User not found");
         }
+        String role;
+        org.springframework.security.core.userdetails.User user;
+        if (customer != null) role = customer.getRole();
+        else role = employee.getRole();
 
         Set<GrantedAuthority> authorities = new HashSet<>();
-        authorities.add(new SimpleGrantedAuthority(user.getRole().getName()));
-        return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), authorities);
+        authorities.add(new SimpleGrantedAuthority(role));
+
+        if (customer != null) user = new org.springframework.security.core.userdetails.User(customer.getUsername(), customer.getPassword(), authorities);
+        else user = new org.springframework.security.core.userdetails.User(employee.getUsername(), employee.getPassword(), authorities);
+
+        //return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), authorities);
+        return user;
     }
 }

@@ -13,14 +13,16 @@ import java.security.Principal;
 public class FunctionController {
     @PreAuthorize("hasRole('CUSTOMER')")
     @RequestMapping(value = "/home", method = RequestMethod.GET)
-    public String home(Principal principal) {
+    public String home() {
 
         return "home";
     }
     @PreAuthorize("hasRole('EMPLOYEE')")
     @RequestMapping(value = "/employee", method = RequestMethod.GET)
-    public String employee(Principal principal) {
+    public String employee() {
 
         return "employee";
     }
+
+
 }

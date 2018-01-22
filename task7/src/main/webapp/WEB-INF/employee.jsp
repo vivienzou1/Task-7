@@ -19,5 +19,7 @@
 <%@ include file="create-fund.jsp" %>
 <h1>transition day</h1>
 <%@ include file="transitionday.jsp" %>
+<h1>fund list</h1>
+<%@ include file="fund-list.jsp" %>
 </body>
 </html>

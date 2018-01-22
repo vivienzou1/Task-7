@@ -10,6 +10,7 @@ public interface TransitionDayService {
 
     TransitionDayForm getForm();
     void updatePrice(TransitionDayForm form);
+    void updateLastId(long id);
     void transitionDay();
     void buy(Transaction transaction);
     void sell(Transaction transaction);

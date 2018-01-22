@@ -1,9 +1,11 @@
 package com.task7.leo.service.Imp;
 
 import com.task7.leo.domain.Fund;
+import com.task7.leo.domain.LastTransitionId;
 import com.task7.leo.domain.Transaction;
 import com.task7.leo.dto.TransitionDayForm;
 import com.task7.leo.repositories.FundRepository;
+import com.task7.leo.repositories.LastTransitionIdRepository;
 import com.task7.leo.repositories.TransactionRepository;
 import com.task7.leo.service.TransitionDayService;
 import javafx.animation.Transition;
@@ -20,18 +22,20 @@ public class TransitionDayServiceImpl implements TransitionDayService {
 
     private final FundRepository fundRepository;
     private final TransactionRepository transactionRepository;
+    private final LastTransitionIdRepository lastTransitionIdRepository;
     private Date date;
 
     @Autowired
-    public TransitionDayServiceImpl(FundRepository fundRepository, TransactionRepository transactionRepository) {
+    public TransitionDayServiceImpl(FundRepository fundRepository, TransactionRepository transactionRepository, LastTransitionIdRepository lastTransitionIdRepository) {
         this.fundRepository = fundRepository;
         this.transactionRepository = transactionRepository;
+        this.lastTransitionIdRepository = lastTransitionIdRepository;
     }
 
     @Override
     public void transitionDay() {
         // for debug ******************
-        long lastId = 0;
+        long lastId = 0;//lastTransitionIdRepository.findById(1);
         List<Transaction> transactions = transactionRepository.findByIdAfter(lastId);
         for (Transaction transaction : transactions) {
             if (transaction.getType().equals("buy")) {
@@ -83,5 +87,9 @@ public class TransitionDayServiceImpl implements TransitionDayService {
         }
 
         this.date = transitionDayForm.getDate();
+    }
+
+    public void updateLastId(long lastId) {
+        lastTransitionIdRepository.updateLastIdById(lastId, 0);
     }
 }

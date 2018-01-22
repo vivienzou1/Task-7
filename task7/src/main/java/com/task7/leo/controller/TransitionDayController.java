@@ -39,8 +39,10 @@ public class TransitionDayController {
             return "transitionday";
         }
 
+        long lastId = 0;
         transitionDayService.updatePrice(transitionDayForm);
         transitionDayService.transitionDay();
+        transitionDayService.updateLastId(lastId);
 
         return "success";
     }

@@ -2,8 +2,10 @@ package com.task7.leo.controller;
 
 
 import com.task7.leo.domain.Fund;
+import com.task7.leo.domain.LastTransitionId;
 import com.task7.leo.dto.*;
 import com.task7.leo.repositories.FundRepository;
+import com.task7.leo.repositories.LastTransitionIdRepository;
 import com.task7.leo.service.TransitionDayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,11 +22,13 @@ public class EmployeeController {
     private final FundRepository fundRepository;
 
     private final TransitionDayService transitionDayService;
+    private final LastTransitionIdRepository lastTransitionIdRepository;
 
     @Autowired
-    public EmployeeController(TransitionDayService transitionDayService, FundRepository fundRepository) {
+    public EmployeeController(TransitionDayService transitionDayService, FundRepository fundRepository, LastTransitionIdRepository lastTransitionIdRepository) {
         this.transitionDayService = transitionDayService;
         this.fundRepository = fundRepository;
+        this.lastTransitionIdRepository = lastTransitionIdRepository;
     }
 
     @ModelAttribute("depositForm")

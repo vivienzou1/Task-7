@@ -6,18 +6,20 @@
 
 <head>
 
-    <title>employee</title>
+    <title>customer</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 </head>
 
 <body>
-<h1>deposit check</h1>
-<%@ include file="deposit.jsp" %>
-<h1>create fund</h1>
-<%@ include file="create-fund.jsp" %>
-<h1>transition day</h1>
-<%@ include file="transitionday.jsp" %>
+<h1>buy fund</h1>
+<%@ include file="buy-fund.jsp" %>
+<h1>sell fund</h1>
+<%@ include file="sell-fund.jsp" %>
+<h1>request check</h1>
+<%@ include file="withdraw.jsp" %>
+<h1>fund list</h1>
+<%@ include file="fund-list.jsp" %>
 </body>
 </html>

@@ -13,8 +13,6 @@
 </head>
 
 <body>
-
-Register
 <!-- Register Form -->
 <form:form action="${pageContext.request.contextPath}/newfund" method="POST" modelAttribute="fundCreateForm">
 

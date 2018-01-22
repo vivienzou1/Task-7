@@ -33,6 +33,7 @@ public class DepositController {
     @RequestMapping(value = "/deposit", method = RequestMethod.POST)
     public String buyFund(@ModelAttribute(value = "depositForm") @Valid DepositForm depositForm,
                           BindingResult result) {
+        System.out.println(result);
         if (result.hasErrors()) {
             return "deposit";
         }

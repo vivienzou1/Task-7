@@ -14,10 +14,12 @@
 
 <body>
 
-<form:form action="${pageContext.request.contextPath}/logout" method="post">
-    <button type="submit" value="logout">logout</button>
-</form:form>
 Success
-
+<form:form action="${pageContext.request.contextPath}/customer-console" method="post">
+    <button type="submit" value="customer">customer console</button>
+</form:form>
+<form:form action="${pageContext.request.contextPath}/employee-console" method="post">
+    <button type="submit" value="employee">employee console</button>
+</form:form>
 </body>
 </html>

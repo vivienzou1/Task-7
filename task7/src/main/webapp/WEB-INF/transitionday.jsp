@@ -16,16 +16,16 @@
 
 <form:form action="${pageContext.request.contextPath}/transitionday" method="POST" modelAttribute="transitionDayForm">
     <ul>
-        <c:forEach var="i" begin="0" end="1">
-            <li>${transitionDayForm.getFunds()[i]}</li>
-
+        <c:forEach var="i" begin="0" end="${transitionDayForm.getFunds().size() - 1}">
+            <%--<li>${transitionDayForm.getFunds()[i]}</li>--%>
             <form:label path="funds[${i}].fundSymbol">Symbol</form:label>
-            <form:input readonly="readonly" path="funds[${i}].fundSymbol" required="required" />
+            <form:input readonly="true" path="funds[${i}].fundSymbol" required="required" />
             <form:errors path="funds[${i}].fundSymbol"/>
 
             <form:label path="funds[${i}].price">Price</form:label>
             <form:input path="funds[${i}].price" required="required" />
             <form:errors path="funds[${i}].price"/>
+            <br>
         </c:forEach>
             <br>
 

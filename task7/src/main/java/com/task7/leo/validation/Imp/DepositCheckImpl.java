@@ -2,6 +2,7 @@ package com.task7.leo.validation.Imp;
 
 import com.task7.leo.dto.DepositForm;
 import com.task7.leo.dto.WithdrawForm;
+import com.task7.leo.repositories.CustomerRepository;
 import com.task7.leo.repositories.FundRepository;
 import com.task7.leo.repositories.UserRepository;
 import com.task7.leo.validation.DepositCheck;
@@ -13,10 +14,10 @@ import javax.validation.ConstraintValidatorContext;
 
 public class DepositCheckImpl implements ConstraintValidator<DepositCheck, Object> {
 
-    private final UserRepository userRepository;
+    private final CustomerRepository customerRepository;
 
     @Autowired
-    public DepositCheckImpl(UserRepository userRepository) { this.userRepository = userRepository; }
+    public DepositCheckImpl(CustomerRepository customerRepository) { this.customerRepository = customerRepository; }
 
     @Override
     public void initialize(DepositCheck depositCheck) {
@@ -27,8 +28,8 @@ public class DepositCheckImpl implements ConstraintValidator<DepositCheck, Objec
     public boolean isValid(Object o, ConstraintValidatorContext constraintValidatorContext) {
         DepositForm depositForm = (DepositForm) o;
 
-        // user exist
-        if (userRepository.findByUsername(depositForm.getUsername()) == null) {
+        // customer exist
+        if (customerRepository.findCustomerByUsername(depositForm.getUsername()) == null) {
             return false;
         }
 

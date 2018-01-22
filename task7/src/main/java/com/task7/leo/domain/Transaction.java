@@ -16,7 +16,7 @@ public class Transaction {
     private long id;
 
     @ManyToOne()
-    private User user;
+    private Customer customer;
 
     @ManyToOne()
     private Fund fund;
@@ -30,8 +30,8 @@ public class Transaction {
 
     private String type;
 
-    public Transaction(User user, Fund fund, double amount, double share, String type) {
-        this.user = user;
+    public Transaction(Customer customer, Fund fund, double amount, double share, String type) {
+        this.customer = customer;
         this.fund = fund;
         this.amount = amount;
         this.share = share;
@@ -42,7 +42,7 @@ public class Transaction {
     public int hashCode() {
         int result = super.hashCode();
         result = 31 * result + (int) (id ^ (id >>> 32));
-        result = 31 * result + user.hashCode();
+        result = 31 * result + customer.hashCode();
         result = 31 * result + fund.hashCode();
         result = 31 * result + (int) (amount * 100);
         result = 31 * result + (int) (share * 1000);
@@ -52,7 +52,7 @@ public class Transaction {
 
     @Override
     public String toString() {
-        return type + "(" + id + " " + user.getUsername() + " " + (fund == null ? "null" : fund.getFundSymbol()) + " " +
+        return type + "(" + id + " " + customer.getUsername() + " " + (fund == null ? "null" : fund.getFundSymbol()) + " " +
                 amount + " " + share + " "  + (date == null ? "null" : date.toString()) +  ")";
     }
 }
